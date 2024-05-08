@@ -1,4 +1,4 @@
-**Assignment: ETL with Airflow**
+# Assignment: ETL with Airflow
 
 **Introduction:**
 In this assignment, you will demonstrate your understanding of Extract, Transform, Load (ETL) processes using Apache Airflow for workflow orchestration. You will be tasked with designing and implementing an ETL pipeline that extracts data from various sources, applies transformations, and loads the transformed data into a target database.
