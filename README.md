@@ -16,8 +16,93 @@ This DAG automates the process of fetching data from one or more APIs, transform
 - **Load Data to Database:** Inserts the transformed data into the target database table. Automatic table creation is ensured if necessary.
 
 ```python
-# Python script for API to Database DAG
-# [Insert provided Python script for API to Database DAG here]
+from datetime import datetime, timedelta
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+import pandas as pd
+import requests
+
+# Define default arguments
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+    'start_date': datetime(2024, 5, 1),
+}
+
+# Function to fetch data from API
+def fetch_data_from_api():
+    response = requests.get('https://api.sampleapis.com/simpsons/characters')
+    data = response.json()
+    return data
+
+# Function to transform data
+def transform_data(**kwargs):
+    data = kwargs['ti'].xcom_pull(task_ids='fetch_data_from_api')
+    # Transform JSON data to DataFrame
+    df = pd.DataFrame(data)
+
+    #Transformation 1
+    # Filter and transform data using pandas
+    transformed_df = df[df['gender'] == 'f']
+
+    #Transformation 2
+    # Filter and transform data using pandas
+    transformed_df = df[df['gender'] == 'f']
+
+    return transformed_df
+
+## Define Schema before load
+custom_schema = 'ikhsan'
+
+# Function to load data into database
+# Define the custom schema name
+def load_data_to_database(**kwargs):
+    transformed_data = kwargs['ti'].xcom_pull(task_ids='transform_data')
+    
+    # Retrieve connection from Airflow
+    postgres_hook = PostgresHook(postgres_conn_id='postgres')
+    
+    # Analyze data types of transformed data
+    data_types = {col: 'TEXT' for col, dtype in transformed_data.dtypes.items()}
+    
+    # Create table if it doesn't exist
+    create_query = f"""
+    CREATE TABLE IF NOT EXISTS {custom_schema}.target_table (
+        {', '.join([f'{col} {data_types[col]}' for col in transformed_data.columns])}
+    );
+    """
+    postgres_hook.run(create_query)
+    
+    # Load data into the table with custom schema
+    transformed_data.to_sql('target_table', postgres_hook.get_sqlalchemy_engine(), schema=custom_schema, if_exists='append', index=False)
+
+
+# Define the DAG
+with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@daily', catchup=False) as dag:
+    
+    extract_task = PythonOperator(
+        task_id='fetch_data_from_api',
+        python_callable=fetch_data_from_api
+    )
+    
+    transform_task = PythonOperator(
+        task_id='transform_data',
+        python_callable=transform_data,
+        provide_context=True
+    )
+    
+    load_task = PythonOperator(
+        task_id='load_data_to_database',
+        python_callable=load_data_to_database,
+        provide_context=True
+    )
+    
+    extract_task >> transform_task >> load_task
 ```
 
 **Assignment Requirements:**
