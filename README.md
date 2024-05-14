@@ -5,22 +5,7 @@ In this assignment, you will demonstrate your understanding of Extract, Transfor
 
 **Task Details:**
 
-### 1. DAG from CSV to Database:
-
-**Description:**
-This DAG automates the process of extracting data from one or more CSV files, performing any necessary data transformations, and loading the transformed data into a target database.
-
-**Task Details:**
-- **Extract Data:** Reads the CSV file(s) and loads the data into memory.
-- **Transform Data:** Applies any required transformations to the extracted data.
-- **Load Data to Database:** Inserts the transformed data into the target database table.
-
-```python
-# Python script for CSV to Database DAG
-# [Insert provided Python script for CSV to Database DAG here]
-```
-
-### 2. DAG from API to Database:
+### 1. DAG from API to Database:
 
 **Description:**
 This DAG automates the process of fetching data from one or more APIs, transforming the retrieved data, and loading it into a target database.
@@ -81,26 +66,6 @@ Zip Archive Submission: Save both the stored procedure script and the slide pres
   - Transformation of extracted data.
   - Loading transformed data into a database table.
 
-## Slide 3: ETL from CSV to Database: Task Overview
-- **Task Overview**
-  - Description of the steps involved in the ETL process from CSV to database.
-- **Steps**
-  - Extracting data from CSV files.
-  - Transforming the extracted data.
-  - Loading transformed data into a database table.
-
-## Slide 4: ETL from CSV to Database: Implementation
-- **Implementation**
-  - Designing Airflow DAG for CSV to database ETL.
-  - Writing Python functions for extraction, transformation, and loading.
-  - Implementing error handling and logging mechanisms.
-
-## Slide 5: ETL from CSV to Database: Documentation
-- **Documentation**
-  - Documenting each task in the DAG.
-  - Providing clear explanations for assumptions and configurations.
-  - Parameterizing values through Airflow variables or DAG configuration.
-
 ## Slide 6: ETL from API to Database
 - **Objective**
   - Automating ETL process from APIs to a database table.
@@ -109,7 +74,7 @@ Zip Archive Submission: Save both the stored procedure script and the slide pres
   - Transformation of retrieved data.
   - Loading transformed data into a database table.
 
-## Slide 7: ETL from API to Database: Task Overview
+## Slide 3: ETL from API to Database: Task Overview
 - **Task Overview**
   - Description of the steps involved in the ETL process from API to database.
 - **Steps**
@@ -117,29 +82,29 @@ Zip Archive Submission: Save both the stored procedure script and the slide pres
   - Transforming the retrieved data.
   - Loading transformed data into a database table.
 
-## Slide 8: ETL from API to Database: Implementation
+## Slide 4: ETL from API to Database: Implementation
 - **Implementation**
   - Designing Airflow DAG for API to database ETL.
   - Writing Python functions for data retrieval, transformation, and loading.
   - Implementing error handling and logging mechanisms.
 
-## Slide 9: ETL from API to Database: Documentation
+## Slide 5: ETL from API to Database: Documentation
 - **Documentation**
   - Documenting each task in the DAG.
   - Providing clear explanations for assumptions and configurations.
   - Parameterizing values through Airflow variables or DAG configuration.
 
-## Slide 10: Benefits of ETL with Apache Airflow
+## Slide 6: Benefits of ETL with Apache Airflow
 - **Benefits**
   - Discussing the advantages of using Apache Airflow for ETL workflows.
   - Highlighting scalability, scheduling, and monitoring capabilities.
 
-## Slide 11: Execution and Testing
+## Slide 7: Execution and Testing
 - **Execution and Testing**
   - Explanation of executing and testing the ETL pipelines in Apache Airflow.
   - Importance of testing for accuracy and reliability of data processing.
 
-## Slide 12: Conclusion
+## Slide 8: Conclusion
 - **Conclusion**
   - Summarizing the key points covered in ETL pipelines with Apache Airflow.
   - Reinforcing the importance of efficient ETL processes for data-driven decision making.
