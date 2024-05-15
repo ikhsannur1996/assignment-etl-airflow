@@ -104,7 +104,8 @@ with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@d
         provide_context=True
     )
     
-    extract_task >> transform_task >> load_task```
+    extract_task >> transform_task >> load_task
+```
 
 **Assignment Requirements:**
 
