@@ -36,7 +36,7 @@ default_args = {
 
 # Function to fetch data from API
 def fetch_data_from_api():
-    response = requests.get('https://api.sampleapis.com/simpsons/characters')
+    response = requests.get('https://api-sekolah-indonesia.vercel.app/sekolah?page=1&perPage=2000')
     data = response.json()
     return data
 
