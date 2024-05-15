@@ -43,21 +43,23 @@ def fetch_data_from_api():
 # Function to transform data
 def transform_data(**kwargs):
     data = kwargs['ti'].xcom_pull(task_ids='fetch_data_from_api')
+    # Extract the relevant data from the nested structure
+    sekolah_data = data['dataSekolah']
     # Transform JSON data to DataFrame
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(sekolah_data)
 
     #Transformation 1
     # Filter and transform data using pandas
-    transformed_df = df[df['gender'] == 'f']
+    # transformed_df = df[df['gender'] == 'f']
 
     #Transformation 2
     # Filter and transform data using pandas
-    transformed_df = df[df['gender'] == 'f']
+    transformed_df = df # [df['gender'] == 'f']
 
     return transformed_df
 
 ## Define Schema before load
-custom_schema = 'ikhsan'
+custom_schema = 'public'
 
 # Function to load data into database
 # Define the custom schema name
@@ -102,8 +104,7 @@ with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@d
         provide_context=True
     )
     
-    extract_task >> transform_task >> load_task
-```
+    extract_task >> transform_task >> load_task```
 
 **Assignment Requirements:**
 
