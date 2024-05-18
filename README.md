@@ -50,11 +50,13 @@ def transform_data(**kwargs):
 
     #Transformation 1
     # Filter and transform data using pandas
-    # transformed_df = df[df['gender'] == 'f']
+    # transformed_df = 
 
     #Transformation 2
     # Filter and transform data using pandas
-    transformed_df = df # [df['gender'] == 'f']
+    # transformed_df =
+
+    transformed_df = df 
 
     return transformed_df
 
