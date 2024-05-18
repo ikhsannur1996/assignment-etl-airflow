@@ -5,7 +5,7 @@ In this assignment, you will demonstrate your understanding of Extract, Transfor
 
 **Task Details:**
 
-### 1. DAG from API to Database:
+## DAG from API to Database:
 
 **Description:**
 This DAG automates the process of fetching data from one or more APIs, transforming the retrieved data, and loading it into a target database.
