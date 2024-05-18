@@ -149,15 +149,8 @@ Zip Archive Submission: Save both the stored procedure script and the slide pres
   - Introduction to Extract, Transform, Load (ETL) processes.
   - Explanation of Apache Airflow as a tool for orchestrating ETL workflows.
 
-## Slide 2: ETL from CSV to Database
-- **Objective**
-  - Automating ETL process from CSV files to a database table.
-- **Tasks**
-  - Extraction from CSV files.
-  - Transformation of extracted data.
-  - Loading transformed data into a database table.
 
-## Slide 6: ETL from API to Database
+## Slide 2: ETL from API to Database
 - **Objective**
   - Automating ETL process from APIs to a database table.
 - **Tasks**
