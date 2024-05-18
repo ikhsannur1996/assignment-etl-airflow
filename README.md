@@ -12,7 +12,7 @@ This DAG automates the process of fetching data from one or more APIs, transform
 
 **Task Details:**
 - **Fetch Data from API:** Makes HTTP requests to one or more APIs to retrieve data. The data is typically returned in JSON format.
-- **Transform Data:** Applies any necessary data transformations to the retrieved data.
+- **Transform Data:** Apply any necessary data transformations to the retrieved data. **Ensure at least two transformations are applied.**
 - **Load Data to Database:** Inserts the transformed data into the target database table. Automatic table creation is ensured if necessary.
 
 ```python
