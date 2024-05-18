@@ -12,6 +12,8 @@ This DAG automates the process of fetching data from one or more APIs, transform
 
 **Task Details:**
 - **Fetch Data from API:** Makes HTTP requests to one or more APIs to retrieve data. The data is typically returned in JSON format.
+    - https://github.com/wanrabbae/api-sekolah-indonesia (API Documentation)
+    - https://api-sekolah-indonesia.vercel.app/sekolah?page=1&perPage=2000 (API Request)
 - **Transform Data:** Apply any necessary data transformations to the retrieved data. **Ensure at least two transformations are applied.**
 - **Load Data to Database:** Inserts the transformed data into the target database table. Automatic table creation is ensured if necessary.
 
