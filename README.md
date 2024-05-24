@@ -126,10 +126,11 @@ with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@d
 6. **Documentation:** Provide clear documentation for each task and the overall DAG. Explain the purpose of each task and any assumptions made during the implementation.
 
 **Submission Guidelines:**
-- Compress the Airflow DAG scripts and documentation into a single folder.
-- Submit the compressed folder containing the scripts and documentation.
 - Ensure that the documentation is well-formatted and includes relevant explanations and assumptions.
 - Slide Presentation: Create a slide presentation to accompany the stored procedure. Each slide should focus on explaining a specific step of the procedure, detailing its significance, execution process, and impact on the overall ETL workflow. Ensure the slides are clear, concise, and visually appealing to facilitate understanding.
+- Compress the Airflow DAG scripts and documentation into a single folder. (Optional)
+- Submit the compressed folder containing the scripts and documentation. (Optional)
+
 
 Zip Archive Submission: Save both the stored procedure script and the slide presentation as separate files within a zip archive. This zip file should be submitted through the Learning Management System (LMS) to facilitate grading and feedback.
 
