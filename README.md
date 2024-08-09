@@ -62,7 +62,7 @@ def transform_data(**kwargs):
 
     return transformed_df
 
-## Define Schema before load
+## Define Schema before load ( Change to your schema name)
 custom_schema = 'public'
 
 # Function to load data into database
