@@ -117,13 +117,7 @@ with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@d
    
 2. **Implementation:** Write Python functions for each task, adhering to the provided examples. Ensure that the functions handle extraction, transformation, and loading appropriately.
 
-3. **Error Handling:** Implement error handling mechanisms within the pipeline to handle potential failures gracefully.
-
-4. **Logging:** Incorporate logging within the tasks to facilitate troubleshooting and monitoring of the pipeline's execution.
-
-5. **Parameterization:** Avoid hardcoding paths, URLs, or table schemas. Parameterize these values through Airflow variables or DAG configuration.
-
-6. **Documentation:** Provide clear documentation for each task and the overall DAG. Explain the purpose of each task and any assumptions made during the implementation.
+3. **Documentation:** Provide clear documentation for each task and the overall DAG. Explain the purpose of each task and any assumptions made during the implementation.
 
 **Submission Guidelines:**
 - Ensure that the documentation is well-formatted and includes relevant explanations and assumptions.
@@ -134,11 +128,6 @@ with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@d
 
 Zip Archive Submission: Save both the stored procedure script and the slide presentation as separate files within a zip archive. This zip file should be submitted through the Learning Management System (LMS) to facilitate grading and feedback.
 
-**Evaluation Criteria:**
-- Adherence to requirements: 30%
-- Implementation correctness: 30%
-- Error handling and logging: 20%
-- Documentation quality: 20%
 
 **Note:** Utilize libraries and external resources as needed, and ensure that your implementation follows best practices for ETL pipelines and Airflow DAG design.
 
