@@ -33,7 +33,7 @@ default_args = {
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-    'start_date': datetime(2024, 5, 1),
+    'start_date': datetime(2024, 5, 1)
 }
 
 # Function to fetch data from API
@@ -89,7 +89,7 @@ def load_data_to_database(**kwargs):
 
 
 # Define the DAG
-with DAG('api_to_database_dag', default_args=default_args, schedule_interval='@daily', catchup=False) as dag:
+with DAG('api_to_database_dag_sekolah', default_args=default_args, start_date=datetime(2024, 5, 1),schedule_interval='@daily', catchup=False) as dag:
     
     extract_task = PythonOperator(
         task_id='fetch_data_from_api',
