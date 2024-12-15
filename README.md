@@ -87,6 +87,9 @@ def load_data_to_database(**kwargs):
     # Load data into the table with custom schema
     transformed_data.to_sql('target_table', postgres_hook.get_sqlalchemy_engine(), schema=custom_schema, if_exists='append', index=False)
 
+    # Note
+    # if_exists='append' --> Each DAG run will add the data
+    # if_exists='replace' --> Each DAG run will replace the data
 
 # Define the DAG
 with DAG('api_to_database_dag_sekolah', default_args=default_args, start_date=datetime(2024, 5, 1), schedule_interval='@daily', catchup=False) as dag:
