@@ -65,6 +65,9 @@ def transform_data(**kwargs):
 ## Define Schema before load ( Change to your schema name)
 custom_schema = 'public'
 
+## Define Table before load ( Change to your table name)
+custom_table = 'target_table'
+
 # Function to load data into database
 # Define the custom schema name
 def load_data_to_database(**kwargs):
@@ -78,14 +81,14 @@ def load_data_to_database(**kwargs):
     
     # Create table if it doesn't exist
     create_query = f"""
-    CREATE TABLE IF NOT EXISTS {custom_schema}.target_table (
+    CREATE TABLE IF NOT EXISTS {custom_schema}.{custom_table} (
         {', '.join([f'{col} {data_types[col]}' for col in transformed_data.columns])}
     );
     """
     postgres_hook.run(create_query)
     
     # Load data into the table with custom schema
-    transformed_data.to_sql('target_table', postgres_hook.get_sqlalchemy_engine(), schema=custom_schema, if_exists='append', index=False)
+    transformed_data.to_sql(custom_table, postgres_hook.get_sqlalchemy_engine(), schema=custom_schema, if_exists='append', index=False)
 
     # Note
     # if_exists='append' --> Each DAG run will add the data
