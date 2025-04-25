@@ -50,6 +50,10 @@ def transform_data(**kwargs):
     # Transform JSON data to DataFrame
     df = pd.DataFrame(sekolah_data)
 
+    # Trim whitespace from all string columns
+    for col in df.select_dtypes(include=['object']).columns:
+        df[col] = df[col].str.strip()
+
     #Transformation 1
     # Filter and transform data using pandas
     # transformed_df = 
